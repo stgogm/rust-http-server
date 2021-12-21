@@ -33,9 +33,7 @@ impl Server {
                     let mut buffer = [0; 1024];
 
                     match stream.read(&mut buffer) {
-                        Err(e) => {
-                            println!("Failed to read from connection: {}", e);
-                        }
+                        Err(e) => println!("Failed to read from connection: {}", e),
                         Ok(_) => {
                             println!(
                                 "Received a request: \n\n{}",
